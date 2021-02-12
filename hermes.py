@@ -34,7 +34,7 @@ def listen(port, listen_num=1, size_limit=1024, log_function=off):
         yield data, conn
 
     conn.close()
-    log_function("connection at {} closed".format(data))
+    log_function("connection at {} closed".format((addr)))
 
 def send(message, port, log_function=off):
     host = socket.gethostname()
@@ -47,5 +47,5 @@ def send(message, port, log_function=off):
     log_function("message sent: {}".format(message))
     
     sock.close()
-    log_function("connection closed")
+    log_function("socket closed")
 
